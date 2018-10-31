@@ -1,5 +1,6 @@
+package com.matheuslopes.hackathon;
+
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -11,6 +12,9 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.sound.sampled.DataLine;
 import javax.sound.sampled.TargetDataLine;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.ibm.watson.developer_cloud.assistant.v1.Assistant;
 import com.ibm.watson.developer_cloud.assistant.v1.model.InputData;
@@ -26,8 +30,9 @@ import com.ibm.watson.developer_cloud.text_to_speech.v1.model.SynthesizeOptions;
 import com.ibm.watson.developer_cloud.text_to_speech.v1.model.SynthesizeOptions.Voice;
 import com.ibm.watson.developer_cloud.text_to_speech.v1.util.WaveUtils;
 
-public class Application {
-
+@SpringBootApplication
+public class InteligenciaSegurancaPublicaApplication {
+	
 	public static File welcome = new File("welcome.wav");
 	
 	public static String VERSION_ASSISTENT = "2018-02-16";
@@ -39,11 +44,11 @@ public class Application {
 	public static String USER_WATSON_TEXT_TO_SPEECH = "eb657d72-4c20-4d27-b0b2-03bd2711f365";
 	public static String PASSWORD_WATSON_TEXT_TO_SPEECH = "60A18b20tDmz";
 	public static String LANGUAGE = "pt-BR_BroadbandModel";
-	
-	
-	public static void main(String[] args) throws FileNotFoundException, InterruptedException, Exception {
-    	
-    	SpeechToText service = new SpeechToText();
+
+	public static void main(String[] args) throws Exception {
+		SpringApplication.run(InteligenciaSegurancaPublicaApplication.class, args);
+		
+		SpeechToText service = new SpeechToText();
         service.setUsernameAndPassword(USER_WATSON_SPEECH_TO_TEXT, PASSWORD_WATSON_SPEECH_TO_TEXT);
         
         int sampleRate = 16000;
@@ -51,7 +56,7 @@ public class Application {
         DataLine.Info info = new DataLine.Info(TargetDataLine.class, format);
         
         if (!AudioSystem.isLineSupported(info)) {
-            System.out.println("Certifique-se que seu microfone est· habilitado.");
+            System.out.println("Certifique-se que seu microfone est√° habilitado.");
             System.exit(0);
         }
         

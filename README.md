@@ -26,10 +26,12 @@
 **SOLICITANTE**: Cachoeira do Bom Jesus.
 
 **Inteligência**: Seu nome, por favor?
-**SOLICITANTE**: Matheus
+**SOLICITANTE**: Matheus.
 
 **Inteligência**: Existem pessoas gravemente feridas no local?
 **SOLICITANTE**: Talvez.
 
 **Inteligência**: O Autor do fato está no local?
-**SOLICITANTE**: Obrigada pelas informações, sua solicitação foi encaminhada para o responsável!
+**SOLICITANTE**: Não.
+
+**Inteligência**: Obrigada pelas informações, sua solicitação foi encaminhada para o responsável!
